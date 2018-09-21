@@ -34,7 +34,7 @@ Inside the 'restonode-react' folder run.
 ```sh
 $ npm start
 ```
-  - This app runs in localhost port 30000
+  - This app runs in localhost port 3000
   
 # Database
 
