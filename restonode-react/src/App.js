@@ -4,27 +4,15 @@ import axios from 'axios';
 import './App.css';
 import Products from './components/Products';
 import Order from './components/Order';
+import Track from './components/Track';
 import {geocodeByAddress, getLatLng} from "react-places-autocomplete";
-
-//https://ibb.co/gxiwez
-// https://ibb.co/hV5nme
-// https://ibb.co/m7u2Kz
-// https://ibb.co/fMDJsK
-// https://ibb.co/dvTwez
-// https://ibb.co/fjGhKz
-// https://ibb.co/ftkysK
-// https://ibb.co/kuSpzz
-// https://ibb.co/d6G4XK
-// https://ibb.co/mD92Kz
-// https://ibb.co/k5FysK
-// https://ibb.co/ccmhKz
 
 let products = [
     {
-    "image": "https://image.ibb.co/fHRSme/lam_tikka.png" ,
-    "title": "Nepalese MOMO",
-    "description": "Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies",
-    "price": 2.2
+        "image": "https://image.ibb.co/fHRSme/lam_tikka.png",
+        "title": "Nepalese MOMO",
+        "description": "Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies",
+        "price": 2.2
     },
     {
         "image": "https://image.ibb.co/fHRSme/lam_tikka.png" ,
@@ -48,14 +36,18 @@ class App extends Component {
             phone: '',
             destination: '',
             address: '',
+            order_id_search: '',
+            query_order: false,
             cart_products: [
 
-            ]
+            ],
+            current_order: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.addProduct = this.addProduct.bind(this);
         this.removeProduct = this.removeProduct.bind(this);
         this.orderNow = this.orderNow.bind(this);
+        this.trackOrder = this.trackOrder.bind(this);
     }
 
     handleSelect = address => {
@@ -94,10 +86,47 @@ class App extends Component {
         this.setState({cart_products: array});
     }
 
+    trackOrder() {
+
+        let _this2 = this;
+
+        axios.get('http://localhost:8080/order', {
+            params: {
+                order_id: this.state.order_id_search
+            }
+        })
+            .then(function (res) {
+                let response = res.data.data;
+
+                let query_order = {
+                    destination: response.destination,
+                    distance: response.distance,
+                    duration_in_traffic: response.duration_in_traffic,
+                    name: response.name,
+                    origin: response.origin,
+                    phone: response.phone,
+                    order: response.order,
+                    price: response.price,
+
+                };
+
+                _this2.setState({
+                    query_order: query_order
+                })
+
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
+
     orderNow() {
         const total_price = this.state.cart_products.reduce(
             (a, b) => a + b.price, 0);
-        console.log(this.state)
+
+        let _this2 = this;
+
         axios.post(`http://localhost:8080/order`, {
             name: this.state.name,
             phone: this.state.phone,
@@ -107,8 +136,20 @@ class App extends Component {
             order: this.state.cart_products
         })
             .then(res => {
-                console.log(res);
-                console.log(res.data);
+                let response = res.data.data;
+                let payload = {
+                    title: "We're on it!",
+                    description: `We are preparing your order, it should arrive in ${response.duration_in_traffic} or less here is your order id`,
+                    order_id: response.order_id
+                };
+
+                this.setState({
+                    current_order: payload
+                })
+
+            })
+            .catch(function (error) {
+                alert("Ups check your order id please");
             })
     }
 
@@ -122,8 +163,7 @@ class App extends Component {
           <div className="mainTitle">
               <div className="container">
                   <h1>Restonode</h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                      industry's standard dummy</p>
+                  <p>We are ubicated in  Don Torcuato, Buenos Aires Province</p>
               </div>
           </div>
 
@@ -146,7 +186,27 @@ class App extends Component {
                  removeProduct={this.removeProduct}
                  orderNow={this.orderNow}
                  total_price={total_price}
+                 current_order={this.state.current_order}
           />
+
+          <div className="introSection">
+              <div className="container">
+                  <div className="row">
+                      <div className="col-lg-12">
+                          <h1 className="cntr">You can track your order here!</h1>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <Track
+              order_id_search={this.state.order_id_search}
+              query_order={this.state.query_order}
+              handleChange={this.handleChange}
+              trackOrder={this.trackOrder}
+          />
+
+
 
       </div>
     );

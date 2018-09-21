@@ -15,6 +15,18 @@ import PlacesAutocomplete from 'react-places-autocomplete';
                                                  data-dismiss="alert" onClick={() => this.props.removeProduct(index)}>×</a>{item.title}<strong> ${item.price}</strong></div>
         ));
 
+        let current_order;
+        if (this.props.current_order) {
+            current_order = (
+                <div>
+                    <h2>{this.props.current_order.title}</h2>
+                    <p>{this.props.current_order.description}</p>
+                    <strong> # {this.props.current_order.order_id}</strong>
+                </div>
+            )
+        } else {
+            current_order = (<p><a className="btn btn-default form-control" onClick={this.props.orderNow} role="button">Order Now!</a></p>)
+        }
 
         return (
             <div className="container marketing">
@@ -75,11 +87,8 @@ import PlacesAutocomplete from 'react-places-autocomplete';
                         </div>
                         <div className="col-lg-4"><img alt="Lam Tikka" className="img-circle" src="https://image.ibb.co/dLXiRe/deliver.png" style={{
                             width:'60%'}}/>
-                            <p><a className="btn btn-default form-control" onClick={this.props.orderNow} role="button">Order Now!</a></p>
-                            <h2>We're on it!</h2>
-                            <p>Thanks for your order,it should arrives in 30 minutes or less! You can track it with the
-                                following
-                                code</p><strong> #429887</strong></div>
+                            {current_order}
+                        </div>
                     </div>
                 </div>
             </div>
