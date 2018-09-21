@@ -1,0 +1,13 @@
+
+{
+  "url":"",
+  "encrypt": "8_fTteZXj*",
+  "cookie_secret":"asd87a0ks",
+
+  "production":{
+    "url" : "",
+    "db" : "mongodb+srv://danny:danny123456!@restonode-albx2.mongodb.net/test?retryWrites=true"
+  }
+
+
+}
