@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bca64def-3811-4d86-a52d-5d1b71bacff9" name="Default Changelist" comment="" />
+    <list default="true" id="bca64def-3811-4d86-a52d-5d1b71bacff9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../restonode-react/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../restonode-react/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restonode-react/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../restonode-react/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restonode-react/src/components/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/../restonode-react/src/components/Order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/apiController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/apiController.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -57,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/apiController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+            <state relative-caret-position="23">
+              <caret line="1" column="40" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -118,6 +123,9 @@
       <replace />
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -152,11 +160,11 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-35" />
-    <option name="y" value="-1057" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="825" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -278,18 +286,18 @@
       <workItem from="1536865354548" duration="16120000" />
       <workItem from="1536940452666" duration="2086000" />
       <workItem from="1537397890245" duration="9348000" />
-      <workItem from="1537473663310" duration="13890000" />
+      <workItem from="1537473663310" duration="16048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41523000" />
+    <option name="totallyTimeSpent" value="43681000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-35" y="-1057" width="1920" height="1057" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="825" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49842766" visible="true" weight="0.14533965" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49842766" visible="true" weight="0.19450317" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5015723" side_tool="true" weight="0.14533965" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -303,7 +311,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32982087" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.43654114" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -496,13 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/orders.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -551,10 +552,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/apiController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+        <state relative-caret-position="23">
+          <caret line="1" column="40" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="40" />
         </state>
       </provider>
     </entry>

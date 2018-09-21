@@ -38,7 +38,7 @@ module.exports = {
                     for(var i in order_detail){
                         order_final = order_final + order_detail[i].title + ' - '
                     }
-                    
+
                     let order = new Order({
                         origin: origin,
                         destination: destination,
